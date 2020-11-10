@@ -25,6 +25,12 @@ It is an auth-less express server boilerplate codes to kickstart your backend de
 
 happy backend-deving 😊
 
+## 📝 highlight
+
+It includes documentation of available routes using swagger. visit ```localhost:3000\api-docs``` after localhost setup.
+
+happy backend-deving 😊
+
 ## 👤 author
 
  **Alok raj (alokr417@gmail.com)**
@@ -36,7 +42,6 @@ happy backend-deving 😊
 ## 🚀 future scope
 
 * adding test-cases
-* adding documentation
 * more database support (eg: SQL)
 
 ## 🤝 contributing

@@ -3,6 +3,8 @@ import helmet from 'helmet';
 import express, { Request, Response } from 'express';
 import cookieParser from 'cookie-parser';
 import BaseRouter from './routes';
+import swaggerUi from 'swagger-ui-express';
+import * as swaggerDocument from './swagger.json';
 
 // Init express
 const app = express();
@@ -29,12 +31,18 @@ if (process.env.NODE_ENV === 'production') {
 // Add APIs
 app.use('/api', BaseRouter);
 
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+
 // Print API errors
-app.use((err: Error, req: Request, res: Response) => {
-	console.error(err.message, err);
-	return res.status(400).json({
-		error: err.message,
-	});
+app.use((req: Request, res: Response, next) => {
+	const err: any = new Error('Not Found');
+	err.status = 404;
+	next(err);
+});
+app.use((err: any, req: Request, res: Response, next: any) => {
+	console.log(err);
+	if (err.status === 404) res.status(404).json({ message: 'Not found' });
+	else res.status(500).json({ message: 'Something looks wrong :( !!!' });
 });
 
 // Export express instance
