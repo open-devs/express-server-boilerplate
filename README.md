@@ -46,7 +46,7 @@ happy backend-deving 😊
 
 * website: https://opendevs.in/
 * github: [@open-devs](https://github.com/open-devs)
-* core members: [@open-devs](https://github.com/open-devs), [@mikr13](https://github.com/mikr13)
+* core members: [@alok722](https://github.com/alok722), [@mikr13](https://github.com/mikr13)
 
 ## 🚀 future scope
 
