@@ -7,7 +7,7 @@
     "build": "node build.js",
     "lint": "tslint --project \"tsconfig.json\"",
     "test": "jest --testTimeout=10000",
-    "generate-documentation": "typedoc --tsconfig ./tsconfig.json"
+    "generate-docs": "typedoc --tsconfig ./tsconfig.json"
   },
   "nodemonConfig": {
     "watch": [

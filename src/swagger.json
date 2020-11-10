@@ -5,13 +5,13 @@
         "title": "Product API",
         "description": "an *auth-less* [express](https://expressjs.com/) server boilerplate to kickstart your backend development.",
         "contact": {
-            "name": "Alok Raj",
-            "url": "https://alokraj.tech",
-            "email": "alokr417@gmail.com"
+            "name": "opendevs",
+            "url": "https://opendevs.in",
+            "email": "open.devs.github@gmail.com"
         },
         "license": {
             "name": "MIT",
-            "url": "https://github.com/alok722/express-server-boilerplate/blob/main/LICENSE"
+            "url": "https://github.com/open-devs/express-server-boilerplate/blob/main/LICENSE"
         }
     },
     "servers": [
