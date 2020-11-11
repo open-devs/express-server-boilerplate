@@ -1,6 +1,10 @@
 import { IProduct } from '../../models/index';
 import { DB } from '../index';
 
+
+/** 
+ * Interface for defining methods to be implemented
+ */
 export interface IProductDao {
 	read: () => Promise<IProduct[]>;
 	getOne: (_id: string) => Promise<IProduct | null>;
@@ -9,11 +13,18 @@ export interface IProductDao {
 	delete: (_id: string) => Promise<void>;
 }
 
+/**
+ * Class for Product DAO, contains every methods possible on Product collection
+ * {@linkcode IProductDao}
+ */
 export class ProductDao implements IProductDao {
 
 
 	/**
+   * Get one by_id
 	 * @param id
+   * @async
+   * @returns Promise<IProduct | null>
 	 */
 	public async getOne(_id: string): Promise<IProduct | null> {
 		try {
@@ -29,7 +40,9 @@ export class ProductDao implements IProductDao {
 
 
 	/**
-	 *
+	 * Get all
+   * @async
+   * @returns Promise<IProduct[]>
 	 */
 	public async read(): Promise<IProduct[]> {
 		try {
@@ -42,8 +55,10 @@ export class ProductDao implements IProductDao {
 
 
 	/**
-	 *
+	 * Create new
+   * @async
 	 * @param product
+   * @returns Promise<IProduct>
 	 */
 	public async add(product: IProduct): Promise<IProduct> {
 		try {
@@ -56,8 +71,11 @@ export class ProductDao implements IProductDao {
 
 
 	/**
-	 * @param product
+	 * Update one
+   * @async
 	 * @param _id
+	 * @param product
+   * @returns Promise<IProduct>
 	 */
 	public async update(_id: string, product: IProduct): Promise<IProduct> {
 		try {
@@ -70,8 +88,10 @@ export class ProductDao implements IProductDao {
 
 
 	/**
-	 *
-	 * @param id
+	 * Delete one
+   * @async
+	 * @param _id
+   * @returns Promise<void>
 	 */
 	public async delete(_id: string): Promise<void> {
 		try {

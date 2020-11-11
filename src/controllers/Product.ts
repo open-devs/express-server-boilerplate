@@ -1,18 +1,30 @@
 import { Request, Response } from 'express';
 import { ProductDao } from '../daos';
 
+/**
+ * Instantiating product DAO object
+ */
 const productDao = new ProductDao();
 
 module.exports = {
+  
+	/**
+	 * Get all controller
+   * @async
+	 */
 	get: async (req: Request, res: Response, next: any) => {
 		try {
 			const products = await productDao.read();
-	        return res.status(200).send(products);
+			return res.status(200).send(products);
 		} catch (error) {
 			next(error);
 		}
 	},
 
+	/**
+	 * Get one by _id controller
+   * @async
+	 */
 	getById: async (req: Request, res: Response, next: any) => {
 		try {
 			const { _id } = req.params;
@@ -27,6 +39,10 @@ module.exports = {
 		}
 	},
 
+	/**
+	 * Create new controller
+   * @async
+	 */
 	create: async (req: Request, res: Response, next: any) => {
 		try {
 			const data = await productDao.add(req.body);
@@ -36,6 +52,10 @@ module.exports = {
 		}
 	},
 
+	/**
+	 * Update one by _id controller
+   * @async
+	 */
 	updateById: async (req: Request, res: Response, next: any) => {
 		try {
 			const { _id } = req.params;
@@ -46,6 +66,10 @@ module.exports = {
 		}
 	},
 
+	/**
+	 * Delete one by _id controller
+   * @async
+	 */
 	deleteById: async (req: Request, res: Response, next: any) => {
 		try {
 			const { _id } = req.params;
