@@ -34,6 +34,10 @@ It is an auth-less express server boilerplate codes to kickstart your backend de
 
 happy backend-deving 😊
 
+## 📄 Docs
+
+[express-server-generator](https://open-devs.github.io/express-server-boilerplate/)
+
 ## 📝 highlight
 
 It includes documentation of available routes using swagger. visit ```localhost:3000\api-docs``` after localhost setup.
